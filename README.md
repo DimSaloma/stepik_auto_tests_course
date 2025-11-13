@@ -1,8 +1,10 @@
 # Selenium_auto_tests
 Здесь хранятся скрипты проекта
 
-## Описание: Программа, которая будет бронировать дом для отдыха по строго заданной цене.
+## Описание: 
+Программа, которая будет бронировать дом для отдыха по строго заданной цене.
 
+```python
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
