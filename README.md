@@ -1,12 +1,40 @@
-# stepik_auto_tests_course
-Выполнение заданий курса
+# Selenium_auto_tests
+Здесь хранятся скрипты проекта
 
-## О проекте
-В этом репозитории я буду хранить решения заданий по автоматизации тестов с помощью Selenium и Python.
+## Описание
+Программа, которая будет бронировать дом для отдыха по строго заданной цене.
 
-Ссылка на курс: [Stepik - Автоматизация тестирования](https://stepik.org/course/575/syllabus)
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import math
+import time
 
-## Мои достижения
-- [x] Настроил Git и GitHub
-- [x] Сделал первый коммит
-- [ ] Пройти первый урок по Selenium
+def calc(x):
+    return str(math.log(abs(12 * math.sin(int(x)))))
+
+try: 
+    browser = webdriver.Chrome()
+    browser.get("http://suninjuly.github.io/explicit_wait2.html")
+    
+    price = WebDriverWait(browser, 15).until(
+        EC.text_to_be_present_in_element((By.ID, "price"), "$100")
+    )
+    
+    book_button = browser.find_element(By.ID, "book")
+    book_button.click()
+    
+    x_element = browser.find_element(By.ID, "input_value")
+    x = x_element.text
+    y = calc(x)
+        
+    answer_field = browser.find_element(By.ID, "answer")
+    answer_field.send_keys(y)
+    
+    submit_button = browser.find_element(By.ID, "solve")
+    submit_button.click()
+
+finally:
+    time.sleep(30)
+    browser.quit()
