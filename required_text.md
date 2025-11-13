@@ -1,4 +1,5 @@
 ## Описание
+Написана программа, которая будет бронировать дом для отдыха по строго заданной цене.
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
