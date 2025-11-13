@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import math
 import time
 
-# Функция для вычисления значения по формуле
+    # Функция для вычисления значения по формуле
 def calc(x):
     return str(math.log(abs(12 * math.sin(int(x)))))
 
